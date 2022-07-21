@@ -1,3 +1,11 @@
 <h1><%= @playlist.title %></h1>
 
 <p><%= @playlist.description %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_playlist_path(@playlist) %></li>
+  <li><%= link_to "Destroy", playlist_path(@playlist), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
