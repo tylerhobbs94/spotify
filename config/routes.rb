@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get "/", to: "main#index"
 
-  get "/playlist", to: "playlist#index"
+  # get "/playlist", to: "playlist#index"
+  resources :playlists
 
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
-  delete "logout", to: "sessions#destory"
+  get "logout", to: "sessions#destroy"
 end
