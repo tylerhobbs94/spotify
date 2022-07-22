@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get "/", to: "main#index"
 
   # get "/playlist", to: "playlist#index"
-  resources :playlists
+  resources :playlists do
+    resources :musics
+  end
 
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
