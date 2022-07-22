@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_21_234516) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_22_015900) do
   create_table "musics", force: :cascade do |t|
     t.string "song"
     t.text "artist"
     t.integer "playlist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["playlist_id"], name: "index_musics_on_playlist_id"
   end
 
@@ -25,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_234516) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index "\"user_id\"", name: "index_playlists_on_user_id"
   end
 

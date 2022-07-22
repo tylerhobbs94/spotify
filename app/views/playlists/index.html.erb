@@ -2,9 +2,11 @@
 
 <ul>
   <% @playlists.each do |playlist| %>
-    <li>
-      <%= link_to playlist.title, playlist_path(playlist.id) %>
-    </li>
+    <% unless playlist.archived? %>
+      <li>
+        <%= link_to playlist.title, playlist_path(playlist.id) %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 

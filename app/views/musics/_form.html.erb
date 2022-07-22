@@ -1,0 +1,23 @@
+<%= form_with model: [ @playlist, @playlist.musics.build ] do |form| %>
+
+
+  <p>
+    <%= form.label :song %><br>
+    <%= form.text_field :song %>
+  </p>
+  <p>
+    <%= form.label :Artist %><br>
+    <%= form.text_area :artist %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+
+   <div>
+  <%= form.label :status %><br>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  </div>
+  
+
+
+<% end %>

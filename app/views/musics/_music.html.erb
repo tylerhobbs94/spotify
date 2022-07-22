@@ -1,0 +1,17 @@
+<%# <% unless music.archived? %>
+<p>
+  <strong>song:</strong>
+  <%= music.song %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= music.artist %>
+</p>
+
+<p>
+  <%= link_to "Delete Song", [music.playlist, music], data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %>
+</p>

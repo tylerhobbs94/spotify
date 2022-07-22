@@ -3,9 +3,19 @@
 <p><%= @playlist.description %></p>
 
 <ul>
-  <li><%= link_to "Edit", edit_playlist_path(@playlist) %></li>
-  <li><%= link_to "Destroy", playlist_path(@playlist), data: {
+<li>
+<%= link_to "Edit Playlist", edit_playlist_path(@playlist) %>
+</li>
+
+<li><%= link_to "Delete Playlist", playlist_path(@playlist), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+
+<h2>songs.</h2>
+
+<%= render @playlist.musics %>
+
+<h2>Add a Song:</h2>
+<%= render 'musics/form' %>
